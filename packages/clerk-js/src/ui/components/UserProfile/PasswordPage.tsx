@@ -46,6 +46,8 @@ export const PasswordPage = withCardStateProvider(() => {
     type: 'password',
     label: localizationKeys('formFieldLabel__newPassword'),
     isRequired: true,
+    complexity: true,
+    strengthMeter: true,
   });
   const confirmField = useFormControl('confirmPassword', '', {
     type: 'password',
@@ -117,8 +119,6 @@ export const PasswordPage = withCardStateProvider(() => {
             <Form.Control
               {...passwordField.props}
               minLength={6}
-              complexity
-              strengthMeter
               required
               autoFocus={!user.passwordEnabled}
             />
